@@ -1,0 +1,14 @@
+a {
+    color: #61dafb;
+    font-size: medium;
+    text-decoration: none;
+    margin: 12px;
+}
+
+a:hover, a:visited:hover{
+    color: lightblue;
+}
+
+a:visited {
+    color: sandybrown;
+}

@@ -1,0 +1,19 @@
+input {
+    height: 48px;
+    background-color: whitesmoke;
+    border-radius: 12px;
+    border: none;
+    padding: 24px;
+    font-size: 18px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+input:hover {
+    background-color: white;
+}
+
+.connect-right {
+    border-radius: 12px 0 0 12px;
+    margin-right: 0;
+}
