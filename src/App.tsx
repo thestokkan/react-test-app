@@ -1,5 +1,7 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import './App.css';
+import {ThemeContext} from "./theme";
+import './theme/variables.css';
 import {Button, Input, Link, Modal, Counter, Slider} from "./components";
 import {FaBeer, FaBicycle, FaBookOpen, FaLongArrowAltRight} from "react-icons/fa";
 import {
@@ -13,20 +15,32 @@ import {
     WiSnow,
     WiThunderstorm
 } from "react-icons/wi";
-import './variables.css';
 
 function App() {
-    // Connect input and button
-    const [message, setMessage] = useState('');
-    const [updated, setUpdated] = useState(message);
+    // Theme settings
+    const themeContext = useContext(ThemeContext);
+    const toggleTheme = () => {
+        if (themeContext) {
+            if (themeContext.theme === "dark") {
+                console.log("Set theme to light");
+                themeContext.setTheme("light");
+            } else {
+                console.log("Set theme to dark");
+                themeContext.setTheme("dark");
+            }
+        }
+    }
 
+    // Connect input and button
+    const [nameInput, setNameInput] = useState('');
+    const [updatedName, setUpdatedName] = useState(nameInput);
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setMessage(event.target.value);
+        setNameInput(event.target.value);
     };
 
     const handleClick = () => {
         // 👇 "message" stores input field value
-        setUpdated(message);
+        setUpdatedName(nameInput);
         const welcome = document.getElementById("welcome");
         if (welcome) welcome.className = "";
     };
@@ -42,14 +56,17 @@ function App() {
 
     // Modal
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const closeModal = () => setIsModalOpen(false);
+    // const closeModal = () => setIsModalOpen(false);
 
     return (
         <div className="App">
             <header className="App-header">
+                <div className="toggle-theme">
+                    <Button onClick={() => {toggleTheme()}} type={"theme"} id={themeContext!.theme}></Button>
+                </div>
                 <img className="Bundled-up-logo" src="bundled-up.svg" alt="Bundled up kid"/>
                 <h1>
-                    Bundle up!
+                    BundleUp!
                 </h1>
 
                 <div className="temperature-setting">
@@ -68,7 +85,7 @@ function App() {
                            id="name"
                            onChange={handleChange}
                            onKeyDown={handleKeyDown}
-                           value={message}
+                           value={nameInput}
                     />
                     <Button
                         children=<FaLongArrowAltRight/>
@@ -78,7 +95,7 @@ function App() {
                 </div>
 
                 <div className="hidden" id="welcome">
-                    <h3>{`Hello, ${updated}!`}</h3>
+                    <h3>{`Hello, ${updatedName}!`}</h3>
                     <h4>What would you like to do?</h4>
                     <div className="icon-buttons flex-row">
                         <Button

@@ -4,3 +4,4 @@ export {default as Input} from './InputField';
 export {Slider} from './Slider';
 export {Modal} from './Modal';
 export {Counter} from './Counter';
+export {Toggle} from './Toggle';

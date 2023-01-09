@@ -1,6 +1,6 @@
 input {
     height: var(--field-min-height);
-    background-color: whitesmoke;
+    background-color: var(--input-field-background-color);
     border-radius: 12px;
     border: none;
     padding: 24px;

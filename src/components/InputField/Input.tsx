@@ -6,12 +6,13 @@ interface Props {
     id: string;
     placeholderText?: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    validation?: () => void;
     onKeyDown: (event: React.KeyboardEvent) => void;
     value: string;
 
 }
 
-const Input = ({type, id, className, placeholderText, onChange, onKeyDown, value}: Props) => {
+const Input = ({type, id, className, placeholderText, onChange, validation, onKeyDown, value}: Props) => {
     return (
         <input
             type={type}
@@ -19,6 +20,7 @@ const Input = ({type, id, className, placeholderText, onChange, onKeyDown, value
             className={className}
             placeholder={placeholderText}
             onChange={onChange}
+            data-validation={validation}
             onKeyDown={onKeyDown}
             value={value}
         />

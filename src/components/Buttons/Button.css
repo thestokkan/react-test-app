@@ -34,18 +34,20 @@ button:hover {
 }
 
 .connect {
-    background-image: linear-gradient(to right, var(--neutral-color-xlight) , var(--medium-button-background-color));
+    background-image: linear-gradient(to right, var(--input-field-background-color) , var(--medium-button-background-color));
     color: var(--medium-button-text-color);
     font-size: var(--font-size-input);
     font-weight: bold;
     min-height: var(--button-min-height);
     border-radius: 0 12px 12px 0;
     width: var(--button-width-small);
-    margin-left: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: bottom;
 }
 
 .connect:hover {
-    background-image: linear-gradient(to right, var(--neutral-color-xlight), var(--light-button-background-color));
+    background-image: linear-gradient(to right, var(--input-field-background-color), var(--light-button-background-color));
     color: var(--light-button-text-color);
 }
 
@@ -92,4 +94,25 @@ button:hover {
 .counter#down:hover,
 .counter#up:hover {
     background-color: var(--hover-color);
+}
+
+/* Theme button */
+.theme {
+    width: var(--button-min-height);
+    height: var(--button-min-height);
+    background-color: var(--theme-button-color);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    border-radius: 14px;
+}
+
+.theme:hover {
+    background-color: var(--hover-color);
+}
+
+.theme#light  {
+}
+
+.theme#dark {
 }
