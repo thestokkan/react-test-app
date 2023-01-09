@@ -77,7 +77,7 @@ function App() {
                 </h1>
 
                 <div className="temperature-setting">
-                    <h4>What's the temperature today?</h4>
+                    <h4>Today's temperature:</h4>
                     <Counter></Counter>
                     <div className="weather-icons">
                         <Button

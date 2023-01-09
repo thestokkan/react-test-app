@@ -17,24 +17,6 @@
     --danger-soft-color: #ebaead;
     --danger-sharp-color: #BD312E;
 
-
-    /*--sharp-contrast-color-1: sandybrown;*/
-    /*--sharp-contrast-color-2: #00bfff;*/
-    /*!* Element colors *!*/
-    /*--medium-button-background-color: var(--accent-color-medium);*/
-    /*--medium-button-text-color: var(--neutral-color-xlight);*/
-    /*--light-button-background-color: var(--accent-color-light);*/
-    /*--light-button-text-color: var(--neutral-color-dark);*/
-
-
-
-    /*--link-color: var(--sharp-contrast-color-2);*/
-    /*--visited-link-color: var(--sharp-contrast-color-1);*/
-
-    /*--slider-main-color: var(--accent-color-medium);*/
-    /*--slider-main-color-hover: var(--hover-color);*/
-    /*--slider-track-color: var(--accent-color-xlight);*/
-
     /* FONT SIZES */
     --font-size-body: 16px;
     --font-size-input: 16px;
@@ -66,7 +48,9 @@
 .dark {
     --sharp-contrast-color-1: sandybrown;
     --sharp-contrast-color-2: #00bfff;
+    --h1-color: var(--sharp-contrast-color-1);
 
+    --heading-color: var(--accent-color-light);
     --body-background-color: var(--accent-color-dark);
     --body-font-color: var(--neutral-color-xlight);
 
@@ -76,15 +60,16 @@
     --slider-main-color-hover: var(--hover-color);
     --slider-track-color: var(--accent-color-xlight);
 
-    --theme-button-color: var(--accent-color-light);
+    --theme-button-color: var(--sharp-contrast-color-1);
     --input-field-background-color: var(--neutral-color-xlight);
 }
 
 .light {
-
     --sharp-contrast-color-1: #d76c0f;
     --sharp-contrast-color-2: #0099cc;
 
+    --h1-color: var(--sharp-contrast-color-1);
+    --heading-color: var(--accent-color-dark);
     --body-background-color: var(--neutral-color-xlight);
     --body-font-color: var(--neutral-color-dark);
 
@@ -94,7 +79,7 @@
     --slider-main-color-hover: var(--hover-color);
     --slider-track-color: var(--accent-color-xlight);
 
-    --theme-button-color: var(--accent-color-medium);
+    --theme-button-color: var(--accent-color-light);
     --input-field-background-color: var(--accent-color-xlight);
 
 }
