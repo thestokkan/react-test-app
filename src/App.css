@@ -2,6 +2,18 @@
   text-align: center;
 }
 
+.App-header {
+  max-width: 100%;
+  padding: 36px 0;
+  background-color: var(--body-background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /*font-size: calc(10px + 2vmin);*/
+}
+
 .App-logo {
   size: 100px;
   height: 100px;
@@ -12,8 +24,12 @@
   max-height: 150px;
 }
 
-.weather-icons {
+.weather-icons .icon {
   color: var(--sharp-contrast-color-2);
+  font-size: var(--font-size-h3);
+  min-height: unset;
+  height: var(--font-size-h3);
+  margin: 0;
 }
 
 .input-and-button {
@@ -26,15 +42,8 @@
   }
 }
 
-.App-header {
-  background-color: var(--body-background-color);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: var(--neutral-color-xlight);
+p {
+  font-size: var(--font-size-body);
 }
 
 h1 {
@@ -44,6 +53,17 @@ h1 {
   margin-bottom: 48px;
 }
 
+h2 {
+  font-size: var(--font-size-h2);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+}
 .App-link {
   color: var(--link-color);
 }

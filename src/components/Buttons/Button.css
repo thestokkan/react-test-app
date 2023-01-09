@@ -6,6 +6,7 @@ button {
     font-size: var(--font-size-input);
     margin: 16px;
     border: none;
+    transition-duration: 0.4s;
 }
 
 button:hover {
@@ -52,20 +53,19 @@ button:hover {
 }
 
 .icon {
-    width: unset;
-    min-height: unset;
+    width: auto;
+    height: var(--font-size-icon-button);
+    border-radius: unset;
     background-color: transparent;
     border: none;
     font-size: var(--font-size-icon-button);
     color: var(--sharp-contrast-color-1);
-    margin: 0 12px;
-    border-radius: 50%;
     text-align: center;
 }
 
 .icon:hover {
-    background-color: transparent;
     color: var(--hover-color);
+    background-color: transparent;
 }
 
 .cross {
@@ -77,7 +77,7 @@ button:hover {
 .counter {
     width: 48px;
     height: 48px;
-    border-radius: 50%;
+    border-radius: 12%;
     font-size: var(--font-size-input);
     margin: 0;
 
@@ -98,21 +98,19 @@ button:hover {
 
 /* Theme button */
 .theme {
-    width: var(--button-min-height);
-    height: var(--button-min-height);
-    background-color: var(--theme-button-color);
+    width: auto;
+    height: auto;
+    font-size: var(--font-size-h3);
+    color: var(--theme-button-color);
+    background-color: transparent;
     position: fixed;
-    top: 20px;
-    right: 20px;
-    border-radius: 14px;
+    margin: 0;
+    padding: 0;
+    top: 5%;
+    right: 3%;
 }
 
 .theme:hover {
-    background-color: var(--hover-color);
-}
-
-.theme#light  {
-}
-
-.theme#dark {
+    font-size: calc(var(--font-size-h3) + 2px);
+    background-color: transparent;
 }

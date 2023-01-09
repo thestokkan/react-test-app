@@ -3,7 +3,7 @@ import './App.css';
 import {ThemeContext} from "./theme";
 import './theme/variables.css';
 import {Button, Input, Link, Modal, Counter, Slider} from "./components";
-import {FaBeer, FaBicycle, FaBookOpen, FaLongArrowAltRight} from "react-icons/fa";
+import {FaBeer, FaBicycle, FaBookOpen, FaLongArrowAltRight, FaSun, FaMoon} from "react-icons/fa";
 import {
     WiCloud,
     WiDayCloudy,
@@ -19,16 +19,23 @@ import {
 function App() {
     // Theme settings
     const themeContext = useContext(ThemeContext);
+    const [themeIcon, setThemeIcon] = useState(<FaSun/>)
     const toggleTheme = () => {
         if (themeContext) {
             if (themeContext.theme === "dark") {
-                console.log("Set theme to light");
                 themeContext.setTheme("light");
+                setThemeIcon(<FaMoon/>);
             } else {
-                console.log("Set theme to dark");
                 themeContext.setTheme("dark");
+                setThemeIcon(<FaSun/>);
             }
         }
+    }
+
+    // Weather icons
+    const [activeWeatherIcon, setActiveWeatherIcon] = useState("none");
+    const activateIcon = () => {
+
     }
 
     // Connect input and button
@@ -38,7 +45,7 @@ function App() {
         setNameInput(event.target.value);
     };
 
-    const handleClick = () => {
+    const updateName = () => {
         // 👇 "message" stores input field value
         setUpdatedName(nameInput);
         const welcome = document.getElementById("welcome");
@@ -50,7 +57,7 @@ function App() {
 
         if (event.key === 'Enter') {
             event.preventDefault();
-            handleClick();
+            updateName();
         }
     };
 
@@ -62,7 +69,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <div className="toggle-theme">
-                    <Button onClick={() => {toggleTheme()}} type={"theme"} id={themeContext!.theme}></Button>
+                    <Button onClick={() => {toggleTheme()}} type={"theme"} children={themeIcon}></Button>
                 </div>
                 <img className="Bundled-up-logo" src="bundled-up.svg" alt="Bundled up kid"/>
                 <h1>
@@ -72,12 +79,54 @@ function App() {
                 <div className="temperature-setting">
                     <h4>What's the temperature today?</h4>
                     <Counter></Counter>
+                    <div className="weather-icons">
+                        <Button
+                            type="icon"
+                            children={<WiDaySunny/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiDaySunnyOvercast/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiDayCloudy/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiCloud/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiRain/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiSleet/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiSnow/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiFog/>}
+                            onClick={() => activateIcon()}
+                        />
+                        <Button
+                            type="icon"
+                            children={<WiThunderstorm/>}
+                            onClick={() => activateIcon()}
+                        />
+                    </div>
                 </div>
-                <div className="weather-icons">
-                    <WiCloud/> <WiDayCloudy/> <WiSleet/> <WiDaySunny/> <WiDaySunnyOvercast/> <WiFog/> <WiRain/>
-                    <WiSnow/> <WiThunderstorm/>
-                </div>
-
                 <div className="input-and-button flex-row">
                     <Input type="text"
                            className="connect-right"
@@ -89,7 +138,7 @@ function App() {
                     />
                     <Button
                         children=<FaLongArrowAltRight/>
-                        onClick={handleClick}
+                        onClick={updateName}
                         type="connect"
                     />
                 </div>
