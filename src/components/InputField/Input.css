@@ -1,16 +1,16 @@
 input {
-    height: 48px;
+    height: var(--field-min-height);
     background-color: whitesmoke;
     border-radius: 12px;
     border: none;
     padding: 24px;
-    font-size: 18px;
+    font-size: var(--font-size-input);
     text-align: center;
     box-sizing: border-box;
 }
 
 input:hover {
-    background-color: white;
+    background-color: var(--hover-color);
 }
 
 .connect-right {

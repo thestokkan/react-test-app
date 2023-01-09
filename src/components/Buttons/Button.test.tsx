@@ -11,7 +11,7 @@ describe("My Button component", () => {
     };
 
     test("should show the correct text", () => {
-        render(<Button children={buttonText} onClick={increaseValueByOne} />);
+        render(<Button type="default" children={buttonText} onClick={increaseValueByOne} />);
 
         const button = screen.getByTestId("myBtn"); // Use id, don't look up things based on text!
 
@@ -20,7 +20,7 @@ describe("My Button component", () => {
     });
 
     test("should execute callback on click", async () => {
-        render(<Button children={buttonText} onClick={increaseValueByOne} />);
+        render(<Button type="default" children={buttonText} onClick={increaseValueByOne} />);
 
         const button = screen.getByTestId("myBtn");
 
@@ -31,7 +31,7 @@ describe("My Button component", () => {
     });
 
     test("should execute callback on several clicks", async () => {
-        render(<Button children={buttonText} onClick={increaseValueByOne} />);
+        render(<Button type="default" children={buttonText} onClick={increaseValueByOne} />);
 
         const button = screen.getByTestId("myBtn");
 

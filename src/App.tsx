@@ -1,7 +1,18 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Button, Input, Link, Slider} from "./components";
-import {FaBeer, FaBicycle, FaBookOpen} from "react-icons/fa";
+import {Button, Input, Link, Modal, Counter, Slider} from "./components";
+import {FaBeer, FaBicycle, FaBookOpen, FaLongArrowAltRight} from "react-icons/fa";
+import {
+    WiCloud,
+    WiDayCloudy,
+    WiDaySunny,
+    WiDaySunnyOvercast,
+    WiFog,
+    WiRain,
+    WiSleet,
+    WiSnow,
+    WiThunderstorm
+} from "react-icons/wi";
 import './variables.css';
 
 function App() {
@@ -29,13 +40,26 @@ function App() {
         }
     };
 
+    // Modal
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const closeModal = () => setIsModalOpen(false);
+
     return (
         <div className="App">
             <header className="App-header">
-                <img className="App-icon" src="logo192.png" alt="React logo"/>
+                <img className="Bundled-up-logo" src="bundled-up.svg" alt="Bundled up kid"/>
                 <h1>
-                    Welcome to my amazing React app!
+                    Bundle up!
                 </h1>
+
+                <div className="temperature-setting">
+                    <h4>What's the temperature today?</h4>
+                    <Counter></Counter>
+                </div>
+                <div className="weather-icons">
+                    <WiCloud/> <WiDayCloudy/> <WiSleet/> <WiDaySunny/> <WiDaySunnyOvercast/> <WiFog/> <WiRain/>
+                    <WiSnow/> <WiThunderstorm/>
+                </div>
 
                 <div className="input-and-button flex-row">
                     <Input type="text"
@@ -47,7 +71,7 @@ function App() {
                            value={message}
                     />
                     <Button
-                        children=">>"
+                        children=<FaLongArrowAltRight/>
                         onClick={handleClick}
                         type="connect"
                     />
@@ -56,22 +80,37 @@ function App() {
                 <div className="hidden" id="welcome">
                     <h3>{`Hello, ${updated}!`}</h3>
                     <h4>What would you like to do?</h4>
-                    <div className="flex-row">
+                    <div className="icon-buttons flex-row">
                         <Button
                             type="icon"
                             children={<FaBeer/>}
-                            onClick={() => alert("Cheers! 🍻")}
+                            onClick={() => {
+                                setIsModalOpen((currentValue) => !currentValue);
+                            }}
                         />
                         <Button
                             type="icon"
                             children={<FaBicycle/>}
-                            onClick={() => alert("Let's go! 🚲️")}
+                            onClick={() => {
+                                setIsModalOpen((currentValue) => !currentValue);
+                            }}
                         />
                         <Button
                             type="icon"
                             children={<FaBookOpen/>}
-                            onClick={() => alert("🤓")}
+                            onClick={() => {
+                                setIsModalOpen((currentValue) => !currentValue);
+                            }}
                         />
+                        <Modal title=""
+                               isOpen={isModalOpen}
+                               closeModal={() => {
+                                   setIsModalOpen(false);
+                               }}
+                        >
+                            <h3>Wohoo, let's go!</h3>
+
+                        </Modal>
                     </div>
                 </div>
                 <div id="slider">

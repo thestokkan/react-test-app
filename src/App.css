@@ -1,16 +1,23 @@
-:root {
-  --background-color: #282c34;
-  --link-color: #61dafb;
-}
-
-
 .App {
   text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
+  size: 100px;
+  height: 100px;
   pointer-events: none;
+}
+
+.Bundled-up-logo {
+  max-height: 150px;
+}
+
+.weather-icons {
+  color: var(--sharp-contrast-color-2);
+}
+
+.input-and-button {
+  vertical-align: bottom;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -20,14 +27,19 @@
 }
 
 .App-header {
-  background-color: var(--background-color);
+  background-color: var(--accent-color-dark);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--neutral-color-xlight);
+}
+
+h1 {
+  color: var(--sharp-contrast-color-1);
+  margin-bottom: 72px;
 }
 
 .App-link {
@@ -41,4 +53,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.link-list {
+  flex-direction: unset;
+  margin: 24px 0;
+}
+
+.flex-row {
+  flex-direction: unset;
+}
+
+.hidden {
+  display: none;
+}
+
+.icon-buttons {
+  margin: 20px 20px;
+
+}
+
+.temperature-setting {
+  margin-bottom: 32px;
+  color: var(--sharp-contrast-color-2);
 }
